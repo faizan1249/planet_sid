@@ -1,7 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:plant_sid_app/app_constants/app_colors.dart';
 import 'package:plant_sid_app/app_views/widgets/custom_buttom.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:plant_sid_app/app_views/widgets/text_fields.dart';
+import 'package:plant_sid_app/model/bottombarModel.dart';
+
 
 
 class LoginScreen extends StatelessWidget {
@@ -13,7 +17,7 @@ class LoginScreen extends StatelessWidget {
         padding: EdgeInsets.only(top: 170),
             child:Container(
               child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 40),
+                padding: EdgeInsets.symmetric(horizontal: 30),
                 child: Container(
                   child:  Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -26,28 +30,20 @@ class LoginScreen extends StatelessWidget {
 
                         child: Column(
                           children: <Widget>[
-                            TextFormField(
-                              decoration: InputDecoration(
-                                prefixIcon: Icon(Icons.mail),
-                                fillColor: Color(0xFFE8E8E8),
-                                filled: true,
-                                border: InputBorder.none,
-                                hintText: "example@abc.com",
-                                contentPadding: EdgeInsets.symmetric(vertical: 20),
-                              ),
+                            CustomTextField(
+                              obsecureVal: false,
+                              hintTxt: "example@abc.com",
+                              fieldFillColor: textFieldFillColor,
+                              prefixIcon: Icons.mail,
                             ),
                             SizedBox(height: 20,),
-                            TextFormField(
-                              obscureText: true,
-                              decoration: InputDecoration(
-                                prefixIcon: Icon(Icons.security),
-                                fillColor: Color(0xFFE8E8E8),
-                                filled: true,
-                                border: InputBorder.none,
-                                hintText: "●●●●●●●●●",
-                                contentPadding: EdgeInsets.symmetric(vertical: 20),
+                              CustomTextField(
+                                obsecureVal: true,
+                                hintTxt: "●●●●●●●●●",
+                                fieldFillColor: textFieldFillColor,
+                                prefixIcon: Icons.security,
                               ),
-                            ),
+
                           ],
                         ),
                       ),
@@ -65,7 +61,13 @@ class LoginScreen extends StatelessWidget {
                       Container(
 
                         width: double.infinity,
-                        child: CustomButton(buttonClr: Color(0xFFFFB614), btnText: "Continue", textColor: Colors.white, elevationVal: false, onPressed: (){},),
+                        child: CustomButton(buttonClr: orangeYellow,
+                          btnText: "Continue",
+                          textColor: whiteColor,
+                          elevationVal: false,
+                          onPressed: (){
+                          Navigator.push(context,MaterialPageRoute(builder: (context)=>BottomBar()));
+                          },),
                       ),
                       Container(
                         margin: EdgeInsets.only(top: 20),
@@ -79,7 +81,7 @@ class LoginScreen extends StatelessWidget {
                             Padding(
                               padding: EdgeInsets.symmetric(horizontal: 10),
                               child: Text("Or Login Using",style: TextStyle(
-                                color: Colors.black.withOpacity(0.4),
+                                color: blackColor.withOpacity(0.4),
                               ),),
                             ),
                             Container(
@@ -99,11 +101,11 @@ class LoginScreen extends StatelessWidget {
                                 child:LoginLogoButton(
                                   borderVal: false,
                                   btnText: "Facebook",
-                                  buttonClr: Color(0xFF1877F2),
+                                  buttonClr: facebookColor,
                                   imagePath: 'assets/images/facebook-logo.png',
 
                                   onPressed: (){},
-                                  textColor: Colors.white,
+                                  textColor: whiteColor,
                                 )
                             ),
                             SizedBox(width: 10,),
@@ -111,11 +113,11 @@ class LoginScreen extends StatelessWidget {
                                 child:LoginLogoButton(
                                   borderVal: true,
                                   btnText: "Google",
-                                  buttonClr: Colors.white,
+                                  buttonClr: whiteColor,
                                   imagePath: 'assets/images/google-logo.png',
 
                                   onPressed: (){},
-                                  textColor: Colors.black,
+                                  textColor: blackColor,
                                 )
                             ),
 

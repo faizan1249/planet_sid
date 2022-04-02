@@ -27,3 +27,4 @@ final welcomeTextStyle = TextStyle(
   //fontWeight: FontWeight.bold,
   color: orangeYellow,
 );
+

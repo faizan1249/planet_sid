@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:plant_sid_app/app_views/register_screen.dart';
 import 'app_views/splash_screen.dart';
 import 'app_views/login_screen.dart';
+import 'app_views/please_wait_screen.dart';
+import 'app_views/get_started.dart';
 
 
 void main() {
@@ -24,8 +26,10 @@ class PlanetSid extends StatelessWidget {
         //splash_screen.id: (context)=>splash_screen(),
         LoginScreen.id: (context)=>LoginScreen(),
         RegisterScreen.id: (context)=>RegisterScreen(),
+        LoadingScreen.id: (context)=>LoadingScreen(),
+
       },
-      home: splash_screen(),
+      home: GetStarted(),
     );
   }
 }

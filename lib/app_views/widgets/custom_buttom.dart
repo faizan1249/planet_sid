@@ -136,8 +136,13 @@ class LoginLogoButton extends StatelessWidget {
                     width: 40,
                     height: 40,
                     child: Image.asset(imagePath,)),
-                Text(btnText,
-                  style: TextStyle(fontSize: 20,color: textColor),
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.only(left:8.0),
+                    child: Text(btnText,
+                      style: TextStyle( fontSize: 18,color: textColor),
+                    ),
+                  ),
                 ),
               ],
             ),

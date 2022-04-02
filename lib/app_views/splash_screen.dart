@@ -17,9 +17,9 @@ class splash_screen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: ListView(
-        children: [
-          Column(
+      body: SingleChildScrollView(
+        padding: EdgeInsets.only(top: 50),
+          child:Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
@@ -92,7 +92,7 @@ class splash_screen extends StatelessWidget {
               )
             ],
           ),
-        ],
+
 
       ),
     );

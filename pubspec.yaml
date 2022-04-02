@@ -29,6 +29,9 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   font_awesome_flutter: ^10.1.0
+  loading_gifs: ^0.3.0
+  getwidget: 2.0.4
+
 
 dev_dependencies:
   flutter_test:
@@ -50,6 +53,12 @@ flutter:
     - assets/images/logo/logo_planetsid.jpg
     - assets/images/facebook-logo.png
     - assets/images/google-logo.png
+    - assets/images/facebook.png
+    - assets/gif/loader.gif
+    - assets/images/slider1.png
+    - assets/images/hijab.png
+    - assets/images/whiteshirt.png
+    - assets/images/manTshirt.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
