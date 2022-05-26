@@ -8,16 +8,19 @@ class CustomTextField extends StatelessWidget {
     required this.fieldFillColor,
     required this.obsecureVal,
     this.suffixIcon,
+    required this.onChanged,
 });
   String hintTxt;
   final Color fieldFillColor;
   final IconData prefixIcon;
   bool obsecureVal;
   final IconData? suffixIcon;
+  final Function(String? val) onChanged;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      onChanged: onChanged,
       obscureText: obsecureVal,
       decoration: InputDecoration(
         suffixIcon: Icon(suffixIcon),
@@ -28,6 +31,7 @@ class CustomTextField extends StatelessWidget {
         hintText: hintTxt,
         contentPadding: EdgeInsets.symmetric(vertical: 20),
       ),
+
     );
   }
 }

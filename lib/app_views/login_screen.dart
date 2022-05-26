@@ -35,6 +35,10 @@ class LoginScreen extends StatelessWidget {
                               hintTxt: "example@abc.com",
                               fieldFillColor: textFieldFillColor,
                               prefixIcon: Icons.mail,
+                              onChanged: (value)
+                              {
+                                print(value);
+                              },
                             ),
                             SizedBox(height: 20,),
                               CustomTextField(
@@ -42,6 +46,10 @@ class LoginScreen extends StatelessWidget {
                                 hintTxt: "●●●●●●●●●",
                                 fieldFillColor: textFieldFillColor,
                                 prefixIcon: Icons.security,
+                                onChanged: (value)
+                                {
+                                  print(value);
+                                },
                               ),
 
                           ],

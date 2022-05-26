@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 import 'package:plant_sid_app/app_constants/app_colors.dart';
 import 'package:plant_sid_app/app_views/please_wait_screen.dart';
 import 'package:plant_sid_app/app_views/widgets/custom_buttom.dart';
 import 'package:plant_sid_app/app_views/widgets/text_fields.dart';
+import 'package:plant_sid_app/main.dart';
+import 'package:plant_sid_app/app_views/phNumber_view.dart';
+
 
 class RegisterScreen extends StatelessWidget {
   static String id = '/RegisterScreen';
@@ -32,6 +36,10 @@ class RegisterScreen extends StatelessWidget {
                           hintTxt: "Johnson Doe",
                           fieldFillColor: textFieldFillColor,
                           prefixIcon: Icons.person,
+                          onChanged: (value)
+                          {
+                            print(value);
+                          },
                         ),
                         SizedBox(height: 20,),
                         CustomTextField(
@@ -39,6 +47,10 @@ class RegisterScreen extends StatelessWidget {
                           hintTxt: "example@abc.com",
                           fieldFillColor: textFieldFillColor,
                           prefixIcon: Icons.mail,
+                          onChanged: (value)
+                          {
+                            print(value);
+                          },
                         ),
                         SizedBox(height: 20,),
                         CustomTextField(
@@ -47,6 +59,10 @@ class RegisterScreen extends StatelessWidget {
                           fieldFillColor: textFieldFillColor,
                           prefixIcon: Icons.security,
                           suffixIcon: FontAwesomeIcons.eye,
+                          onChanged: (value)
+                          {
+                            print(value);
+                          },
                         ),
 
                       ],
@@ -74,7 +90,8 @@ class RegisterScreen extends StatelessWidget {
                       elevationVal: false,
                       onPressed: (){
                         print("Register");
-                        Navigator.pushNamed(context, LoadingScreen.id);
+
+                        Navigator.pushNamed(context, PhoneNumber.id);
                       },
                     ),
                   ),

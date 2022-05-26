@@ -23,7 +23,7 @@ class BtnList {
 
 
   final btnList = <Widget>[
-    CustomButton(
+    CustomOrderButton(
       buttonClr: orangeYellow,
       btnText: "Next",
       elevationVal: false,
@@ -34,7 +34,7 @@ class BtnList {
     ),
 
 
-    CustomButton(
+    CustomOrderButton(
       buttonClr: orangeYellow,
       btnText: "Get Started",
       elevationVal: false,

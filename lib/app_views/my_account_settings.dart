@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:plant_sid_app/app_constants/app_colors.dart';
+import 'package:plant_sid_app/app_views/generalSettings.dart';
+
+import 'my_orders.dart';
 
 
 
@@ -40,7 +43,7 @@ class _MyAccountState extends State<MyAccount> {
                     radius: 53,
                     backgroundColor: whiteColor,
                     child: CircleAvatar(
-                      backgroundImage: AssetImage('assets/images/hijab.png'),
+                      backgroundImage: AssetImage('assets/images/girl1.PNG'),
                       radius: 50,
                       //child: Icon(FontAwesomeIcons.camera),
                     ),
@@ -48,9 +51,9 @@ class _MyAccountState extends State<MyAccount> {
                   ),
 
                 SizedBox(height: 10,),
-                Text("Manish Chutake",style: TextStyle(fontSize: 23,color: whiteColor,fontWeight: FontWeight.bold),),
+                Text("Angella ",style: TextStyle(fontSize: 23,color: whiteColor,fontWeight: FontWeight.bold),),
                 SizedBox(height: 10,),
-                Text("manishuxuid@gmail.com",style: TextStyle(fontSize: 16,color: whiteColor,fontWeight: FontWeight.normal)),
+                Text("angella@gmail.com",style: TextStyle(fontSize: 16,color: whiteColor,fontWeight: FontWeight.normal)),
               ],
             )
           ),
@@ -65,6 +68,9 @@ class _MyAccountState extends State<MyAccount> {
                    ListTile(
                      title: Text("My Orders",style: TextStyle(fontWeight: FontWeight.w600),),
                      leading: Icon(FontAwesomeIcons.bagShopping,color: orangeYellow,),
+                     onTap: (){
+                       Navigator.pushNamed(context, MyOrders.id);
+                     },
                    ),
                    Divider(thickness: 0.5,color: Colors.grey,),
                    ListTile(
@@ -73,8 +79,10 @@ class _MyAccountState extends State<MyAccount> {
                    ),
                    Divider(thickness: 0.5,color: Colors.grey,),
                    ListTile(
+                     onTap: ()=>Navigator.pushNamed(context, GeneralSettings.id),
                      title: Text("Settings",style: TextStyle(fontWeight: FontWeight.w600)),
                      leading: Icon(Icons.settings,color: orangeYellow,),
+
                    ),
                    Divider(thickness: 0.5,color: Colors.grey,),
                    ListTile(

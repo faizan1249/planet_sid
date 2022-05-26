@@ -12,6 +12,7 @@ import 'login_screen.dart';
 class splash_screen extends StatelessWidget {
 
   static String id = '/';
+  bool isAttention = false;
 
   @override
   Widget build(BuildContext context) {

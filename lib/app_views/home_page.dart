@@ -3,6 +3,9 @@ import 'package:plant_sid_app/app_constants/app_colors.dart';
 import 'package:plant_sid_app/app_views/widgets/text_fields.dart';
 import 'package:plant_sid_app/app_constants/constants.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:plant_sid_app/model/reuseableCode_model.dart';
+
+
 
 class HomePage extends StatelessWidget {
 
@@ -37,22 +40,7 @@ class HomePage extends StatelessWidget {
             children: <Widget>[
               SizedBox(height: 20),
               Container(
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                      prefixIcon: Icon(Icons.search),
-                      hintText: "Search Product",
-                      hintStyle: TextStyle(
-                        fontSize: 18,
-                      ),
-                      filled: true,
-                      fillColor: Colors.white,
-
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.white70),
-                      ),
-                      contentPadding: EdgeInsets.symmetric(vertical: 20),
-                    ),
-                  ),
+                  child: CustomSearchTextField(),
                 decoration: BoxDecoration(
                   boxShadow: [
                     BoxShadow(
@@ -81,13 +69,9 @@ class HomePage extends StatelessWidget {
                       scrollDirection: Axis.horizontal,
                         child:Row(
                           children: [
-                            CategoriesItems(),
-                            CategoriesItems(),
-                            CategoriesItems(),
-                            CategoriesItems(),
-                            CategoriesItems(),
-                            CategoriesItems(),
-                            CategoriesItems(),
+                            CategoriesItems(btnText: "Brands",btnColor: Colors.yellow,ImagePath: "assets/images/hijab.png",),
+                            CategoriesItems(btnText: "Brands",btnColor: Colors.yellow,ImagePath: "assets/images/hijab.png",),
+                            CategoriesItems(btnText: "Brands",btnColor: Colors.yellow,ImagePath: "assets/images/hijab.png",),
                           ],
                         ),
                     ),
@@ -116,86 +100,31 @@ class HomePage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Container(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [Card(
-                                child: Container(
-                                  width: 140,
-                                  height: 160,
-                                  decoration: BoxDecoration(
-                                      image: DecorationImage(
-                                        image: AssetImage("assets/images/whiteshirt.png"),
-                                        fit: BoxFit.cover,
-                                        //colorFilter: ColorFilter.mode(Colors.yellow.withOpacity(0.9), BlendMode.hardLight),
-                                      )
-                                  ),
-
-                                ),
-                              ),
-                                Text('\$55.00'),
-                                Text("Woman T-Shirt"),
-                              ],
+                            child: ReuseableProductsContainer(
+                              ProductTitle: "Woman T-Shirt",
+                              ProductPrice: "\$55.00",
+                              ImagePath: "assets/images/whiteshirt.png",
                             ),
                           ),
                           Container(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [Card(
-                                child: Container(
-                                  width: 140,
-                                  height: 160,
-                                  decoration: BoxDecoration(
-                                      image: DecorationImage(
-                                        image: AssetImage("assets/images/whiteshirt.png"),
-                                        fit: BoxFit.cover,
-                                       // colorFilter: ColorFilter.mode(Colors.yellow.withOpacity(0.9), BlendMode.hardLight),
-                                      )
-                                  ),
-
-                                ),
-                              ),
-                                Text('\$34.00'),
-                                Text("Man T-Shirt"),
-                              ],
+                            child: ReuseableProductsContainer(
+                              ProductTitle: "Woman T-Shirt",
+                              ProductPrice: "\$55.00",
+                              ImagePath: "assets/images/whiteshirt.png",
                             ),
                           ),
                           Container(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [Card(
-                                child: Container(
-                                  width: 140,
-                                  height: 160,
-                                  decoration: BoxDecoration(
-                                      image: DecorationImage(
-                                        image: AssetImage("assets/iamges/manTshirt.png"),
-                                        fit: BoxFit.cover,
-                                        //colorFilter: ColorFilter.mode(Colors.yellow.withOpacity(0.9), BlendMode.hardLight),
-                                      )
-                                  ),
-
-                                ),
-                              ),
-                                Text("adsa"),],
+                            child: ReuseableProductsContainer(
+                              ProductTitle: "Woman T-Shirt",
+                              ProductPrice: "\$55.00",
+                              ImagePath: "assets/images/whiteshirt.png",
                             ),
                           ),
                           Container(
-                            child: Column(
-                              children: [Card(
-                                child: Container(
-                                  width: 140,
-                                  height: 160,
-                                  decoration: BoxDecoration(
-                                      image: DecorationImage(
-                                        image: AssetImage("assets/images/whiteshirt.png"),
-                                        fit: BoxFit.cover,
-                                        //colorFilter: ColorFilter.mode(Colors.yellow.withOpacity(0.9), BlendMode.hardLight),
-                                      )
-                                  ),
-
-                                ),
-                              ),
-                                Text("adsa"),],
+                            child: ReuseableProductsContainer(
+                              ProductTitle: "Woman T-Shirt",
+                              ProductPrice: "\$55.00",
+                              ImagePath: "assets/images/whiteshirt.png",
                             ),
                           ),
                         ],
@@ -326,37 +255,3 @@ class HomePage extends StatelessWidget {
 }
 
 
-
-
-
-
-class CategoriesItems extends StatelessWidget {
-  const CategoriesItems({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-        padding: EdgeInsets.all(7.0),
-        child: Card(
-          child: Container(
-            width: 130,
-            height: 100,
-            decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage("assets/images/hijab.png"),
-                  fit: BoxFit.cover,
-                  colorFilter: ColorFilter.mode(Colors.yellow.withOpacity(0.9), BlendMode.hardLight),
-              ) 
-            ),
-            child: Center(
-              child: Text("Brands"),
-            ),
-
-          ),
-        ),
-
-    );
-  }
-}
